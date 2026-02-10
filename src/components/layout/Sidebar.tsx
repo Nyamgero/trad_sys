@@ -37,6 +37,21 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
+    title: 'Liquidity',
+    items: [
+      { label: 'Equity Liquidity', path: '/liquidity/equity' },
+      { label: 'ETF Liquidity', path: '/liquidity/etf' },
+      { label: 'FX Liquidity', path: '/liquidity/fx' },
+      { label: 'Bond Liquidity', path: '/liquidity/bond' },
+    ],
+  },
+  {
+    title: 'Portfolio',
+    items: [
+      { label: 'Portfolio Overview', path: '/portfolio' },
+    ],
+  },
+  {
     title: 'Reports',
     items: [
       { label: 'Daily Summary', path: '/summary' },

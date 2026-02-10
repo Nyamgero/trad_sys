@@ -1,0 +1,657 @@
+/* ============================================
+   features/portfolio/portfolio.css
+   ============================================ */
+
+/* Portfolio Section */
+.portfolio-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg-primary, #ffffff);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.portfolio-section__title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* AUM Summary */
+.aum-summary {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.aum-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aum-metric--primary {
+  padding-right: 24px;
+  border-right: 1px solid var(--border-color, #e5e7eb);
+}
+
+.aum-metric--primary .aum-metric__value {
+  font-size: 28px;
+}
+
+.aum-metric--highlight {
+  padding: 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+}
+
+.aum-metric__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.aum-metric__value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.aum-metric__value--negative {
+  color: var(--color-negative, #ef4444);
+}
+
+.aum-metric__percent {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary, #6b7280);
+  margin-left: 4px;
+}
+
+.aum-breakdown {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Allocation Table */
+.allocation-table,
+.currency-table,
+.asset-class-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.allocation-header,
+.allocation-row,
+.currency-header,
+.currency-row,
+.asset-class-header,
+.asset-class-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1.5fr;
+  gap: 12px;
+  padding: 10px 12px;
+  align-items: center;
+}
+
+.allocation-header,
+.currency-header,
+.asset-class-header {
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+}
+
+.allocation-row,
+.currency-row,
+.asset-class-row {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.allocation-row--total {
+  background: var(--bg-secondary, #f9fafb);
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.allocation-row__name,
+.currency-row__name,
+.asset-class-row__name {
+  font-weight: 500;
+  color: var(--text-primary, #111827);
+}
+
+.allocation-row__value,
+.currency-row__value,
+.asset-class-row__value {
+  text-align: right;
+  font-size: 13px;
+}
+
+.allocation-row__deviation {
+  text-align: right;
+  font-weight: 500;
+}
+
+.allocation-row__deviation.positive {
+  color: var(--color-positive, #10b981);
+}
+
+.allocation-row__deviation.negative {
+  color: var(--color-negative, #ef4444);
+}
+
+.allocation-row__status {
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.allocation-status--ok {
+  color: var(--color-positive, #10b981);
+}
+
+.allocation-status--overweight,
+.allocation-status--underweight {
+  color: var(--color-warning, #f59e0b);
+}
+
+/* Allocation Chart */
+.allocation-chart {
+  display: flex;
+  height: 32px;
+  margin-top: 16px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.allocation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+  background: var(--color-primary, #3b82f6);
+}
+
+.allocation-bar:nth-child(2) { background: var(--color-secondary, #8b5cf6); }
+.allocation-bar:nth-child(3) { background: var(--color-positive, #10b981); }
+.allocation-bar:nth-child(4) { background: var(--color-warning, #f59e0b); }
+.allocation-bar:nth-child(5) { background: var(--color-info, #06b6d4); }
+.allocation-bar:nth-child(6) { background: var(--text-tertiary, #9ca3af); }
+
+.allocation-bar__label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Risk Metrics Grid */
+.risk-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.risk-metric-card {
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+}
+
+.risk-metric-card__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.risk-metric-card__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.risk-metric-card__benchmark {
+  font-size: 11px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.risk-metric-card__value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+}
+
+.risk-metric-card__value.comparison--better {
+  color: var(--color-positive, #10b981);
+}
+
+.risk-metric-card__value.comparison--worse {
+  color: var(--color-negative, #ef4444);
+}
+
+.risk-metric-card__status {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+  margin-top: 4px;
+}
+
+/* Duration Grid */
+.duration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.duration-metric {
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.duration-metric__label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 8px;
+}
+
+.duration-metric__value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* Key Rate DV01 */
+.key-rate-dv01__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, #111827);
+  margin-bottom: 12px;
+}
+
+.key-rate-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.key-rate-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+}
+
+.key-rate-item__tenor {
+  font-size: 11px;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 600;
+}
+
+.key-rate-item__value {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Attribution */
+.attribution-breakdown {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.attribution-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+}
+
+.attribution-total__label {
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.attribution-components {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.attribution-component {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.attribution-component__bar-container {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-tertiary, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.attribution-component__bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.attribution-component__info {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attribution-component__label {
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Compliance */
+.compliance-table,
+.policy-table {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compliance-header,
+.compliance-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  align-items: center;
+}
+
+.policy-header,
+.policy-row {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.5fr 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  align-items: center;
+}
+
+.compliance-header,
+.policy-header {
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+}
+
+.compliance-row,
+.policy-row {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.compliance-row__utilization {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.utilization-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-tertiary, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.utilization-bar__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.utilization-bar__fill.utilization--ok {
+  background: var(--color-positive, #10b981);
+}
+
+.utilization-bar__fill.utilization--warning {
+  background: var(--color-warning, #f59e0b);
+}
+
+.utilization-bar__fill.utilization--critical {
+  background: var(--color-negative, #ef4444);
+}
+
+.utilization-text {
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 40px;
+}
+
+.utilization-text.utilization--ok {
+  color: var(--color-positive, #10b981);
+}
+
+.utilization-text.utilization--warning {
+  color: var(--color-warning, #f59e0b);
+}
+
+.utilization-text.utilization--critical {
+  color: var(--color-negative, #ef4444);
+}
+
+.compliance-row__status,
+.policy-row__status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.compliance-status--ok {
+  color: var(--color-positive, #10b981);
+}
+
+.compliance-status--warning {
+  color: var(--color-warning, #f59e0b);
+}
+
+.compliance-status--breach {
+  color: var(--color-negative, #ef4444);
+}
+
+.compliance-summary {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+}
+
+.compliance-summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  border-radius: 6px;
+}
+
+.compliance-summary__item--ok {
+  background: var(--color-positive-bg, #d1fae5);
+}
+
+.compliance-summary__item--warning {
+  background: var(--color-warning-bg, #fef3c7);
+}
+
+.compliance-summary__item--breach {
+  background: var(--color-negative-bg, #fee2e2);
+}
+
+.compliance-summary__count {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.compliance-summary__item--ok .compliance-summary__count {
+  color: var(--color-positive, #059669);
+}
+
+.compliance-summary__item--warning .compliance-summary__count {
+  color: var(--color-warning, #d97706);
+}
+
+.compliance-summary__item--breach .compliance-summary__count {
+  color: var(--color-negative, #dc2626);
+}
+
+.compliance-summary__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Top Holdings */
+.holdings-table {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.holdings-header,
+.holdings-row {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1.5fr 1fr 1.5fr 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  align-items: center;
+}
+
+.holdings-header {
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+}
+
+.holdings-row {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.holdings-row__rank {
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+}
+
+.holdings-row__asset {
+  font-weight: 500;
+}
+
+.holdings-row__type {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.holding-type--equity {
+  background: var(--color-primary, #3b82f6);
+  color: white;
+}
+
+.holding-type--etf {
+  background: var(--color-secondary, #8b5cf6);
+  color: white;
+}
+
+.holding-type--fx {
+  background: var(--color-warning, #f59e0b);
+  color: white;
+}
+
+.holding-type--bond {
+  background: var(--color-positive, #10b981);
+  color: white;
+}
+
+.holdings-distribution {
+  margin-top: 20px;
+}
+
+.holdings-distribution__title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.holdings-distribution__bar {
+  display: flex;
+  height: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.holdings-distribution__segment {
+  min-width: 4px;
+}
+
+.holdings-distribution__legend {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .duration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .risk-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .aum-summary {
+    flex-direction: column;
+  }
+
+  .aum-metric--primary {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    padding-right: 0;
+  }
+
+  .duration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attribution-breakdown {
+    flex-direction: column;
+  }
+
+  .compliance-summary {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

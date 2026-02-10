@@ -1,0 +1,267 @@
+/* ============================================
+   features/trading/liquidity/liquidity.css
+   ============================================ */
+
+/* Liquidity View Container */
+.liquidity-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-primary, #ffffff);
+}
+
+/* Summary Section */
+.liquidity-view__summary {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Summary Cards */
+.liquidity-summary-card {
+  flex: 1;
+  min-width: 280px;
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+}
+
+.liquidity-summary-card--alerts {
+  flex: 2;
+  min-width: 400px;
+}
+
+.liquidity-summary-card__title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.liquidity-summary-card__content {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Score Display */
+.liquidity-score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.liquidity-score-display__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Distribution */
+.liquidity-distribution {
+  display: flex;
+  gap: 16px;
+}
+
+.liquidity-distribution__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.liquidity-distribution__item--high {
+  background: var(--color-negative-bg, #fee2e2);
+}
+
+.liquidity-distribution__item--medium {
+  background: var(--color-warning-bg, #fef3c7);
+}
+
+.liquidity-distribution__item--low {
+  background: var(--color-positive-bg, #d1fae5);
+}
+
+.liquidity-distribution__count {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.liquidity-distribution__item--high .liquidity-distribution__count {
+  color: var(--color-negative, #dc2626);
+}
+
+.liquidity-distribution__item--medium .liquidity-distribution__count {
+  color: var(--color-warning, #d97706);
+}
+
+.liquidity-distribution__item--low .liquidity-distribution__count {
+  color: var(--color-positive, #059669);
+}
+
+.liquidity-distribution__label {
+  font-size: 11px;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Metrics */
+.liquidity-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.liquidity-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.liquidity-metric__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.liquidity-metric__value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* Alerts */
+.liquidity-alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.liquidity-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.liquidity-alert--high {
+  background: var(--color-negative-bg, #fee2e2);
+  border-left-color: var(--color-negative, #dc2626);
+}
+
+.liquidity-alert--medium {
+  background: var(--color-warning-bg, #fef3c7);
+  border-left-color: var(--color-warning, #d97706);
+}
+
+.liquidity-alert--low {
+  background: var(--color-info-bg, #dbeafe);
+  border-left-color: var(--color-info, #3b82f6);
+}
+
+.liquidity-alert__icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.liquidity-alert--high .liquidity-alert__icon {
+  background: var(--color-negative, #dc2626);
+}
+
+.liquidity-alert--medium .liquidity-alert__icon {
+  background: var(--color-warning, #d97706);
+}
+
+.liquidity-alert--low .liquidity-alert__icon {
+  background: var(--color-info, #3b82f6);
+}
+
+.liquidity-alert__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.liquidity-alert__symbol {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.liquidity-alert__message {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.liquidity-alert__value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary, #111827);
+}
+
+/* Legend */
+.liquidity-view__legend {
+  padding: 12px 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 6px;
+}
+
+.liquidity-legend {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.liquidity-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.liquidity-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.liquidity-legend__dot--high {
+  background: var(--color-negative, #dc2626);
+}
+
+.liquidity-legend__dot--medium {
+  background: var(--color-warning, #f59e0b);
+}
+
+.liquidity-legend__dot--low {
+  background: var(--color-positive, #10b981);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .liquidity-view__summary {
+    flex-direction: column;
+  }
+
+  .liquidity-summary-card {
+    min-width: auto;
+  }
+
+  .liquidity-summary-card--alerts {
+    min-width: auto;
+  }
+
+  .liquidity-legend {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

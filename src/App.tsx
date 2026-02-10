@@ -9,6 +9,8 @@ import { AppLayout } from './components/layout/AppLayout';
 import { TradingPage } from './pages/TradingPage';
 import { PnLPage } from './pages/PnLPage';
 import { DailySummaryPage } from './pages/DailySummaryPage';
+import { LiquidityPage } from './pages/LiquidityPage';
+import { PortfolioPage } from './pages/PortfolioPage';
 import './styles/global.css';
 
 const queryClient = new QueryClient({
@@ -45,6 +47,18 @@ export const App: React.FC = () => {
               <Route path="fx" element={<PnLPage assetClass="fx" />} />
               <Route path="bond" element={<PnLPage assetClass="bond" />} />
             </Route>
+
+            {/* Liquidity Routes */}
+            <Route path="liquidity">
+              <Route index element={<Navigate to="/liquidity/equity" replace />} />
+              <Route path="equity" element={<LiquidityPage assetClass="equity" />} />
+              <Route path="etf" element={<LiquidityPage assetClass="etf" />} />
+              <Route path="fx" element={<LiquidityPage assetClass="fx" />} />
+              <Route path="bond" element={<LiquidityPage assetClass="bond" />} />
+            </Route>
+
+            {/* Portfolio */}
+            <Route path="portfolio" element={<PortfolioPage />} />
 
             {/* Daily Summary */}
             <Route path="summary" element={<DailySummaryPage />} />
