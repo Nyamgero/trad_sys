@@ -1,0 +1,196 @@
+/* ============================================
+   features/trading/pnl/pnl.css
+   ============================================ */
+
+/* P&L View Container */
+.pnl-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-primary, #ffffff);
+}
+
+/* Summary Section */
+.pnl-view__summary {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Breakdown Cards */
+.pnl-view__breakdown {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.pnl-breakdown-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+  min-width: 140px;
+}
+
+.pnl-breakdown-card__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pnl-breakdown-card__value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.pnl-breakdown-card__percent {
+  margin-top: 2px;
+}
+
+/* Attribution Section */
+.pnl-view__attribution {
+  flex: 1;
+  min-width: 400px;
+  padding: 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+}
+
+.pnl-view__attribution-title {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.pnl-attribution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pnl-attribution-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pnl-attribution-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pnl-attribution-item--total {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  margin-top: 8px;
+}
+
+.pnl-attribution-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pnl-attribution-item__label {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.pnl-attribution-item__percent {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+}
+
+.pnl-attribution-item__bar {
+  height: 6px;
+  background: var(--bg-tertiary, #e5e7eb);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.pnl-attribution-item__bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.pnl-attribution-item__bar-fill--spot {
+  background: var(--color-primary, #3b82f6);
+}
+
+.pnl-attribution-item__bar-fill--forward {
+  background: var(--color-secondary, #8b5cf6);
+}
+
+.pnl-attribution-item__bar-fill--price {
+  background: var(--color-negative, #ef4444);
+}
+
+.pnl-attribution-item__bar-fill--coupon {
+  background: var(--color-positive, #10b981);
+}
+
+.pnl-attribution-item__bar-fill--accrued {
+  background: var(--color-info, #3b82f6);
+}
+
+.pnl-attribution-item__bar-fill--roll {
+  background: var(--color-warning, #f59e0b);
+}
+
+/* Attribution Total */
+.pnl-attribution-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.pnl-attribution-total__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .pnl-attribution-grid--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pnl-view__summary {
+    flex-direction: column;
+  }
+
+  .pnl-view__breakdown {
+    flex-direction: column;
+  }
+
+  .pnl-view__attribution {
+    min-width: auto;
+  }
+
+  .pnl-attribution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pnl-attribution-grid--4col {
+    grid-template-columns: 1fr;
+  }
+}
