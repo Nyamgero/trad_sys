@@ -5,3 +5,4 @@
 export * from './types';
 export * from './columns';
 export * from './BondPositionDetail';
+export * from './BondPositionsView';
