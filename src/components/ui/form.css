@@ -1,0 +1,308 @@
+/* ============================================
+   components/ui/form.css - Form Component Styles
+   ============================================ */
+
+/* Form Field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field--error .form-input,
+.form-field--error .form-select {
+  border-color: var(--color-negative);
+}
+
+.form-field__error {
+  font-size: var(--font-size-xs);
+  color: var(--color-negative);
+}
+
+.form-field__hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+/* Label */
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.form-label__required {
+  color: var(--color-negative);
+}
+
+/* Input */
+.form-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-base);
+}
+
+.form-input:hover:not(:disabled) {
+  border-color: var(--border-color-dark);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input:disabled {
+  background: var(--bg-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input--error {
+  border-color: var(--color-negative);
+}
+
+.form-input--error:focus {
+  border-color: var(--color-negative);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Number input - hide spinners */
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input[type="number"] {
+  -moz-appearance: textfield;
+  font-family: var(--font-mono);
+}
+
+/* Select */
+.form-select {
+  width: 100%;
+  height: 36px;
+  padding: 0 32px 0 12px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.form-select:hover:not(:disabled) {
+  border-color: var(--border-color-dark);
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-select:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.form-select--error {
+  border-color: var(--color-negative);
+}
+
+.form-select--error:focus {
+  border-color: var(--color-negative);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Button */
+.form-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 1;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  position: relative;
+}
+
+.form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.form-btn--sm {
+  height: 28px;
+  padding: 0 12px;
+  font-size: var(--font-size-xs);
+}
+
+.form-btn--md {
+  height: 36px;
+  padding: 0 16px;
+  font-size: var(--font-size-sm);
+}
+
+.form-btn--lg {
+  height: 44px;
+  padding: 0 24px;
+  font-size: var(--font-size-base);
+}
+
+/* Button Variants */
+.form-btn--primary {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+}
+
+.form-btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.form-btn--secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.form-btn--secondary:hover:not(:disabled) {
+  background: var(--border-color);
+}
+
+.form-btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.form-btn--ghost:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.form-btn--danger {
+  background: var(--color-negative);
+  color: var(--text-inverse);
+}
+
+.form-btn--danger:hover:not(:disabled) {
+  background: var(--color-negative-dark);
+}
+
+.form-btn--full-width {
+  width: 100%;
+}
+
+/* Button Loading State */
+.form-btn--loading {
+  cursor: wait;
+}
+
+.form-btn__spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+.form-btn__content--hidden {
+  visibility: hidden;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Row - for side-by-side fields */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.form-row--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Side Toggle (Buy/Sell) */
+.side-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.side-toggle__btn {
+  height: 36px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  font-family: var(--font-family);
+  border: none;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.side-toggle__btn:hover:not(.side-toggle__btn--active) {
+  background: var(--bg-hover);
+}
+
+.side-toggle__btn--buy.side-toggle__btn--active {
+  background: var(--color-positive);
+  color: white;
+}
+
+.side-toggle__btn--sell.side-toggle__btn--active {
+  background: var(--color-negative);
+  color: white;
+}

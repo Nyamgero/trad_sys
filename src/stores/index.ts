@@ -4,3 +4,4 @@
 
 export * from './positionsStore';
 export * from './uiStore';
+export * from './dealTicketStore';

@@ -6,6 +6,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
+import { DealTicketContainer } from '@/components/trading';
 import { useUIStore } from '@/stores';
 import { useWebSocket } from '@/hooks';
 
@@ -22,6 +23,7 @@ export const AppLayout: React.FC = () => {
           <Outlet />
         </main>
       </div>
+      <DealTicketContainer />
     </div>
   );
 };
