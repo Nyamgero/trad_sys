@@ -1,0 +1,68 @@
+/* ============================================
+   components/ui/SplitPanel/SplitPanel.css
+   ============================================ */
+
+.split-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.split-panel--dragging {
+  cursor: row-resize;
+}
+
+.split-panel__top,
+.split-panel__bottom {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-panel__top {
+  min-height: 100px;
+}
+
+.split-panel__bottom {
+  min-height: 100px;
+}
+
+.split-panel__divider {
+  flex-shrink: 0;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: row-resize;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-base);
+}
+
+.split-panel__divider:hover {
+  background: var(--bg-tertiary);
+}
+
+.split-panel--dragging .split-panel__divider {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.split-panel__handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-color);
+  transition: background-color var(--transition-base);
+}
+
+.split-panel__divider:hover .split-panel__handle {
+  background: var(--text-tertiary);
+}
+
+.split-panel--dragging .split-panel__handle {
+  background: var(--text-inverse);
+}

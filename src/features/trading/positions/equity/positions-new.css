@@ -1,0 +1,243 @@
+/* ============================================
+   features/trading/positions/equity/positions-new.css
+   New Trading System Design
+   ============================================ */
+
+.trading-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f1f5f9;
+}
+
+/* Panel */
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.panel__title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.panel__icon {
+  color: #64748b;
+}
+
+.panel__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.panel__badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.panel__action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.panel__action-btn--primary {
+  background: #1e3a5f;
+  color: #ffffff;
+}
+
+.panel__action-btn--primary:hover {
+  background: #2c4a6e;
+}
+
+.panel__action-btn--success {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.panel__action-btn--success:hover {
+  background: #059669;
+}
+
+.panel__content {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+}
+
+/* Country cell with dot indicator */
+.country-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Value styling */
+.value-positive {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.value-negative {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* Portfolio badge */
+.portfolio-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+/* Side badge */
+.side-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.side-badge--buy {
+  background: transparent;
+  color: #10b981;
+}
+
+.side-badge--sell {
+  background: transparent;
+  color: #ef4444;
+}
+
+/* Footer summary */
+.panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.panel__footer-left {
+  display: flex;
+  gap: 24px;
+}
+
+.panel__footer-right {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-stat {
+  display: flex;
+  gap: 6px;
+}
+
+.footer-stat__label {
+  color: #64748b;
+}
+
+.footer-stat__value {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.footer-stat__value--positive {
+  color: #10b981;
+}
+
+.footer-stat__value--negative {
+  color: #ef4444;
+}
+
+/* Override split panel margins */
+.trading-view .split-panel__top,
+.trading-view .split-panel__bottom {
+  padding: 0;
+}
+
+.trading-view .split-panel__top .panel,
+.trading-view .split-panel__bottom .panel {
+  margin: 0 16px;
+  margin-top: 16px;
+  height: calc(100% - 16px);
+}
+
+.trading-view .split-panel__bottom .panel {
+  margin-bottom: 16px;
+  height: calc(100% - 32px);
+}
+
+/* Filter dropdowns */
+.panel__filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel__filter-select {
+  padding: 6px 32px 6px 12px;
+  font-size: 13px;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.panel__filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}

@@ -4,25 +4,23 @@
 
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { DealTicketContainer } from '@/components/trading';
-import { useUIStore } from '@/stores';
-import { useWebSocket } from '@/hooks';
 
 export const AppLayout: React.FC = () => {
-  const sidebarCollapsed = useUIStore((state) => state.sidebarCollapsed);
-  const { status: wsStatus } = useWebSocket();
+  // TODO: Get actual portfolio value from API/store
+  const totalPortfolioValue = 22000;
+  const userInitials = 'FK';
 
   return (
-    <div className={`app-layout ${sidebarCollapsed ? 'app-layout--collapsed' : ''}`}>
-      <Sidebar />
-      <div className="app-layout__main">
-        <Header wsStatus={wsStatus} />
-        <main className="app-layout__content">
-          <Outlet />
-        </main>
-      </div>
+    <div className="app-layout app-layout--no-sidebar">
+      <Header
+        totalPortfolioValue={totalPortfolioValue}
+        userInitials={userInitials}
+      />
+      <main className="app-layout__content">
+        <Outlet />
+      </main>
       <DealTicketContainer />
     </div>
   );

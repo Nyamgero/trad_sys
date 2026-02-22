@@ -4,11 +4,15 @@
 
 /* Import component styles - must be first */
 @import '../components/ui/DataGrid/datagrid.css';
+@import '../components/ui/SplitPanel/SplitPanel.css';
 @import '../components/ui/form.css';
 @import '../components/trading/deal-ticket.css';
+@import '../components/layout/Header.css';
 @import '../features/trading/positions/positions.css';
+@import '../features/trading/positions/equity/positions-new.css';
 @import '../features/trading/pnl/pnl.css';
 @import '../features/trading/liquidity/liquidity.css';
+@import '../features/trading/blotter/blotter.css';
 @import '../features/portfolio/portfolio.css';
 
 /* CSS Variables - Professional Trading Theme */
@@ -183,6 +187,7 @@ h4 { font-size: var(--font-size-lg); }
 /* App Layout */
 .app-layout {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: var(--bg-secondary);
 }
@@ -198,6 +203,14 @@ h4 { font-size: var(--font-size-lg); }
 
 .app-layout--collapsed .app-layout__main {
   margin-left: var(--sidebar-collapsed-width);
+}
+
+.app-layout--no-sidebar {
+  flex-direction: column;
+}
+
+.app-layout--no-sidebar .app-layout__main {
+  margin-left: 0;
 }
 
 .app-layout__content {

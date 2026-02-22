@@ -7,6 +7,7 @@ export * from './PnLIndicator';
 export * from './PriceCell';
 export * from './LiquidityScore';
 export * from './SummaryCard';
+export * from './SplitPanel';
 export * from './Button';
 export * from './Input';
 export * from './Select';

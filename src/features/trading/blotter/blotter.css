@@ -1,0 +1,26 @@
+/* ============================================
+   features/trading/blotter/blotter.css
+   Blotter styles are now in positions-new.css
+   ============================================ */
+
+/* Side badges for blotter */
+.side-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.side-badge--buy {
+  background: transparent;
+  color: #10b981;
+}
+
+.side-badge--sell {
+  background: transparent;
+  color: #ef4444;
+}
