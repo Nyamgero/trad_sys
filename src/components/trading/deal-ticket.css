@@ -7,16 +7,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 0;
-  height: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: var(--z-modal);
 }
 
 /* Deal Ticket Popup */
 .deal-ticket {
-  position: fixed;
-  width: 420px;
+  width: 100%;
+  height: 100%;
   max-height: calc(100vh - 100px);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -286,6 +286,31 @@
 
 .order-summary__value--sell {
   color: var(--color-negative);
+}
+
+/* Resize Handle Styles */
+.deal-ticket-container :global(.react-resizable-handle) {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.deal-ticket-container :global(.react-resizable-handle-se) {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.deal-ticket-container :global(.react-resizable-handle-e) {
+  right: 0;
+  top: 50%;
+  cursor: e-resize;
+}
+
+.deal-ticket-container :global(.react-resizable-handle-s) {
+  bottom: 0;
+  left: 50%;
+  cursor: s-resize;
 }
 
 /* Responsive */

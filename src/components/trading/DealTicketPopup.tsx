@@ -2,8 +2,8 @@
 // components/trading/DealTicketPopup.tsx
 // ============================================
 
-import React, { useRef, useCallback } from 'react';
-import Draggable, { DraggableData, DraggableEvent } from 'react-draggable';
+import React, { useCallback, useState } from 'react';
+import { Rnd } from 'react-rnd';
 import { X } from 'lucide-react';
 import { useDealTicketStore } from '@/stores/dealTicketStore';
 import type { DealTicket, TicketType } from '@/types/dealTicket';
@@ -35,6 +35,10 @@ const getIconLabel = (type: TicketType, subType?: string): string => {
   }
 };
 
+const TICKET_WIDTH = 420;
+const TICKET_MIN_WIDTH = 350;
+const TICKET_MIN_HEIGHT = 300;
+
 export const DealTicketPopup: React.FC<DealTicketPopupProps> = ({
   ticket,
   title,
@@ -44,15 +48,17 @@ export const DealTicketPopup: React.FC<DealTicketPopupProps> = ({
   saveDisabled = false,
   saveLabel = 'Submit Order',
 }) => {
-  const nodeRef = useRef<HTMLDivElement>(null);
   const { focusTicket, closeTicket, updateTicketPosition } = useDealTicketStore();
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleDragStart = useCallback(() => {
+    setIsDragging(true);
     focusTicket(ticket.id);
   }, [focusTicket, ticket.id]);
 
   const handleDragStop = useCallback(
-    (_e: DraggableEvent, data: DraggableData) => {
+    (_e: unknown, data: { x: number; y: number }) => {
+      setIsDragging(false);
       updateTicketPosition(ticket.id, { x: data.x, y: data.y });
     },
     [updateTicketPosition, ticket.id]
@@ -67,20 +73,33 @@ export const DealTicketPopup: React.FC<DealTicketPopupProps> = ({
   }, [closeTicket, ticket.id]);
 
   return (
-    <Draggable
-      nodeRef={nodeRef}
-      handle=".deal-ticket__header"
-      defaultPosition={ticket.position}
-      bounds="parent"
-      onStart={handleDragStart}
-      onStop={handleDragStop}
+    <Rnd
+      default={{
+        x: ticket.position.x,
+        y: ticket.position.y,
+        width: TICKET_WIDTH,
+        height: 'auto',
+      }}
+      minWidth={TICKET_MIN_WIDTH}
+      minHeight={TICKET_MIN_HEIGHT}
+      bounds="window"
+      dragHandleClassName="deal-ticket__header"
+      onDragStart={handleDragStart}
+      onDragStop={handleDragStop}
+      onMouseDown={handleMouseDown}
+      style={{ zIndex: ticket.zIndex }}
+      enableResizing={{
+        top: false,
+        right: true,
+        bottom: true,
+        left: false,
+        topRight: false,
+        bottomRight: true,
+        bottomLeft: false,
+        topLeft: false,
+      }}
     >
-      <div
-        ref={nodeRef}
-        className="deal-ticket"
-        style={{ zIndex: ticket.zIndex }}
-        onMouseDown={handleMouseDown}
-      >
+      <div className={`deal-ticket ${isDragging ? 'deal-ticket--dragging' : ''}`}>
         <div className="deal-ticket__header">
           <div className="deal-ticket__header-left">
             <span className={`deal-ticket__icon deal-ticket__icon--${ticket.type}`}>
@@ -117,7 +136,7 @@ export const DealTicketPopup: React.FC<DealTicketPopupProps> = ({
           </button>
         </div>
       </div>
-    </Draggable>
+    </Rnd>
   );
 };
 
