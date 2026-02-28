@@ -10,12 +10,15 @@ import { FXForwardTicket } from './tickets/FXForwardTicket';
 import { BondTicket } from './tickets/BondTicket';
 import { ETFTicket } from './tickets/ETFTicket';
 import { MMTicket } from './tickets/MMTicket';
+import { NewEquityTradeWindow } from './tickets/NewEquityTradeWindow';
 import type { DealTicket } from '@/types/dealTicket';
 
 const renderTicket = (ticket: DealTicket) => {
   switch (ticket.type) {
     case 'equity':
       return <EquityTicket key={ticket.id} ticket={ticket} />;
+    case 'new-equity-trade':
+      return <NewEquityTradeWindow key={ticket.id} ticket={ticket} />;
     case 'fx':
       if (ticket.subType === 'forward') {
         return <FXForwardTicket key={ticket.id} ticket={ticket} />;

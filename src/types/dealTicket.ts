@@ -2,7 +2,7 @@
 // types/dealTicket.ts - Deal Ticket Type Definitions
 // ============================================
 
-export type TicketType = 'equity' | 'fx' | 'fixed-income' | 'etf' | 'mm';
+export type TicketType = 'equity' | 'fx' | 'fixed-income' | 'etf' | 'mm' | 'new-equity-trade';
 export type TicketSubType = 'spot' | 'forward' | 'bonds';
 export type TradeSide = 'buy' | 'sell';
 export type OrderType = 'market' | 'limit' | 'stop' | 'stop-limit';

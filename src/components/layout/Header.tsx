@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { formatCurrency } from '@/lib/formatters';
+import { TradingToolbar } from '@/components/trading';
 
 interface HeaderProps {
   totalPortfolioValue?: number;
@@ -24,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
           <h1 className="app-header__title">Trading System</h1>
           <p className="app-header__subtitle">Portfolio Management Dashboard</p>
         </div>
+        <TradingToolbar />
       </div>
 
       <div className="app-header__right">

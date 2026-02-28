@@ -20,6 +20,10 @@ interface ToolbarItem {
 
 const toolbarItems: ToolbarItem[] = [
   {
+    label: 'New Trade',
+    config: { type: 'new-equity-trade' },
+  },
+  {
     label: 'Equities',
     config: { type: 'equity' },
   },
