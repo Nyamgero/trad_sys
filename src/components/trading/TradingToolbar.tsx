@@ -37,7 +37,8 @@ const toolbarItems: ToolbarItem[] = [
   {
     label: 'Fixed Income',
     dropdown: [
-      { label: 'Bonds', config: { type: 'fixed-income', subType: 'bonds' } },
+      { label: 'New Bond Trade', config: { type: 'new-bond-trade' } },
+      { label: 'Quick Entry', config: { type: 'fixed-income', subType: 'bonds' } },
     ],
   },
   {
@@ -45,8 +46,11 @@ const toolbarItems: ToolbarItem[] = [
     config: { type: 'etf' },
   },
   {
-    label: 'MM',
-    config: { type: 'mm' },
+    label: 'Money Market',
+    dropdown: [
+      { label: 'New MM Trade', config: { type: 'new-mm-trade' } },
+      { label: 'Quick Entry', config: { type: 'mm' } },
+    ],
   },
 ];
 

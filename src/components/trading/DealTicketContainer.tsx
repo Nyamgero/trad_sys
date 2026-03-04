@@ -11,6 +11,8 @@ import { BondTicket } from './tickets/BondTicket';
 import { ETFTicket } from './tickets/ETFTicket';
 import { MMTicket } from './tickets/MMTicket';
 import { NewEquityTradeWindow } from './tickets/NewEquityTradeWindow';
+import { NewBondTradeWindow } from './tickets/NewBondTradeWindow';
+import { NewMMTradeWindow } from './tickets/NewMMTradeWindow';
 import type { DealTicket } from '@/types/dealTicket';
 
 const renderTicket = (ticket: DealTicket) => {
@@ -26,10 +28,14 @@ const renderTicket = (ticket: DealTicket) => {
       return <FXSpotTicket key={ticket.id} ticket={ticket} />;
     case 'fixed-income':
       return <BondTicket key={ticket.id} ticket={ticket} />;
+    case 'new-bond-trade':
+      return <NewBondTradeWindow key={ticket.id} ticket={ticket} />;
     case 'etf':
       return <ETFTicket key={ticket.id} ticket={ticket} />;
     case 'mm':
       return <MMTicket key={ticket.id} ticket={ticket} />;
+    case 'new-mm-trade':
+      return <NewMMTradeWindow key={ticket.id} ticketId={ticket.id} initialPosition={ticket.position} />;
     default:
       return null;
   }
